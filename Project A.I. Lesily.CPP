@@ -56,22 +56,19 @@ void introGame() {
 //User is choosing their first item
 //NOTE: Consider using an enum insted??
 int firstUpgrade() {
-	int upgrade1, upgrade2;
-	cin >> upgrade1;
-
-	while (upgrade1 == 1 || upgrade1 == 2 || upgrade1 == 3) {
+	int upgrade1;
+	
+	do {
+		cin >> upgrade1;
 		if (upgrade1 == 1) {
-			upgrade2 = 1;
 			cout << "Router Upgraded!" << endl;
 
 		}
 		else if (upgrade1 == 2) {
-			upgrade2 = 2;
 			cout << "Second Monitor Purchased!" << endl;
 
 		}
 		else if (upgrade1 == 3) {
-			upgrade2 = 3;
 			cout << "Ram Upgraded!" << endl;
 
 		}
@@ -79,9 +76,9 @@ int firstUpgrade() {
 			cout << "NARRATOR: Hey? What part of choose a number from 1-3 did you "
 				<< "not understand?" << endl;
 		}
-	}
+	}while ( upgrade1 != 1 && upgrade1 != 2 && upgrade1 != 3)
 //ERROR: Using uninitialized memory
-	return upgrade2;
+	return upgrade1;
 }
 
 bool isLightOn(char light) {
